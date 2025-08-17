@@ -1,0 +1,97 @@
+<h2 id="query-sub-account-list-for-master-account">Query Sub-account List (For Master Account)</h2>
+<p>Get details of the sub-account list</p>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"subAccounts"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="s2">"mexc666"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isFreeze"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"createTime"</span><span class="p">:</span><span class="mi">1544433328000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49910511"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="s2">"mexc888"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isFreeze"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"createTime"</span><span class="p">:</span><span class="mi">1544433328000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91921059"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>GET / api/v3/sub-account/list<br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_ACCOUNT_READ</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>STRING</td>
+<td>NO</td>
+<td>Sub-account Name</td>
+</tr>
+<tr>
+<td>isFreeze</td>
+<td>STRING</td>
+<td>NO</td>
+<td>true or false</td>
+</tr>
+<tr>
+<td>page</td>
+<td>INT</td>
+<td>NO</td>
+<td>Default value: 1</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>INT</td>
+<td>NO</td>
+<td>Default value: 10, Max value: 200</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>YES</td>
+<td></td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>LONG</td>
+<td>NO</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>subAccount name</td>
+</tr>
+<tr>
+<td>isFreeze</td>
+<td>isFreeze</td>
+</tr>
+<tr>
+<td>createTime</td>
+<td>createTime</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>subaccount uid</td>
+</tr>
+</tbody></table>

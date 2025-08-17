@@ -1,0 +1,83 @@
+<h2 id="internal-transfer">Internal Transfer</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post /api/v3/capital/transfer/internal?&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tranId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c45d800a47ba4cbc876a5cd29388319"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<ul>
+<li><strong>POST</strong> <code>/api/v3/capital/transfer/internal</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_WITHDRAW_WRITE</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p><strong>Parameters</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">toAccountType</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">toAccountTyp:EMAIL/UID/MOBILE</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">toAccount:EMAIL/UID/MOBILE</td>
+</tr>
+<tr>
+<td style="text-align: left">areaCode</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">No</td>
+<td style="text-align: left">areaCode of mobile</td>
+</tr>
+<tr>
+<td style="text-align: left">asset</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">asset</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">amount</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p><strong>Response</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">tranId</td>
+<td style="text-align: left">tranId</td>
+</tr>
+</tbody></table>

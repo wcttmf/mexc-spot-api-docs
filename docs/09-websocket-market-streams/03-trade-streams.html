@@ -1,0 +1,83 @@
+<h2 id="trade-streams">Trade Streams</h2>
+<blockquote>
+<p><strong>Request:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><strong>Response:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publicdeals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"dealsList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93220.00"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trade</span><span class="w"> </span><span class="err">price</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.04438243"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trade</span><span class="w"> </span><span class="err">quantity</span><span class="w">
+        </span><span class="nl">"tradetype"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trade</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">(</span><span class="mi">1</span><span class="err">:</span><span class="w"> </span><span class="err">Buy</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="err">:</span><span class="w"> </span><span class="err">Sell)</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1736409765051</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trade</span><span class="w"> </span><span class="err">time</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"eventtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.aggre.deals.v3.api.pb@100ms"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">type</span><span class="w"> 
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">pair</span><span class="w">
+  </span><span class="nl">"sendtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1736409765052</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">time</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Request Parameter:</strong> <code>spot@public.aggre.deals.v3.api.pb@(100ms|10ms)@&lt;symbol&gt;</code></p>
+<p>The Trade Streams push raw trade information; each trade has a unique buyer and seller</p>
+<p><strong>Response Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dealsList</td>
+<td>array</td>
+<td>Trade information</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Trade price</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>string</td>
+<td>Trade quantity</td>
+</tr>
+<tr>
+<td>tradetype</td>
+<td>int</td>
+<td>Trade type (1: Buy, 2: Sell)</td>
+</tr>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>Trade time</td>
+</tr>
+<tr>
+<td>eventtype</td>
+<td>string</td>
+<td>Event type</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>sendtime</td>
+<td>long</td>
+<td>Event time</td>
+</tr>
+</tbody></table>
+<hr/>

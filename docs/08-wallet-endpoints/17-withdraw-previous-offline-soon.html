@@ -1,0 +1,154 @@
+<h2 id="withdraw-previous-offline-soon">Withdraw(previous,offline soon)</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post /api/v3/capital/withdraw/apply?coin=EOS&amp;address=zzqqqqqqqqqq&amp;amount=10&amp;network=EOS&amp;memo=MX10086&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"7213fea8e94b4a5593d507237e5a555b"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>POST</strong> <code>/api/v3/capital/withdraw/apply</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_WITHDRAW_WRITE</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Parameters: </p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">coin</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">coin</td>
+</tr>
+<tr>
+<td style="text-align: left">withdrawOrderId</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">withdrawOrderId</td>
+</tr>
+<tr>
+<td style="text-align: left">network</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">withdraw network</td>
+</tr>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">withdraw address</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">memo(If memo is required in the address, it must be passed in)</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">withdraw amount</td>
+</tr>
+<tr>
+<td style="text-align: left">remark</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">remark</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p>Can get <code>network</code> via endpoints <code>Get /api/v3/capital/config/getall</code>'s response params <code>networkList</code>.</p>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">withdraw ID</td>
+</tr>
+</tbody></table>
+ # ETF
+
+## Get ETF info
+
+> Response
+
+```json
+{
+  "symbol": "OP3SUSDT",
+  "netValue": "0.332",
+  "feeRate": "0.00001",
+  "timestamp": 1661494588543,
+  "leverage": -3,
+  "realLeverage": 2.9126,
+  "mergedTimes": 3,
+  "lastMergedTime": 1659063531000,
+  "basket": 24678.0916
+}
+
+```
+
+- **GET** ```api/v3/etf/info```
+
+**Weight(IP):** 1
+
+Get information on ETFs, such as symbol, netValue and fund fee.
+
+Parameters:
+
+| Name   | Type   | Mandatory | Description |
+| ------ | ------ | --------- | ----------- |
+| symbol | string | No        | ETF symbol  |
+
+
+Response:
+
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| symbol    | string | ETF symbol  |
+| netValue  | string | Net Value   |
+| feeRate   | string | Fund Fee    |
+| timestamp | long   |             |
+|leverage    |string | target leverage  |
+|realLeverage|string | real leverage    |
+|mergedTimes |string | mergedTimes      |
+|lastMergedTime|long | lastMergedTime   |
+|basket     |string  | Basket After  | 
+<h1 id="websocket-market-streams">Websocket Market Streams</h1>
+<ul>
+<li>The base endpoint is: <strong><a href="http://wbs-api.mexc.com/ws">ws://wbs-api.mexc.com/ws</a></strong></li>
+<li>Each connection to <strong><a href="http://wbs-api.mexc.com/ws">ws://wbs-api.mexc.com/ws</a></strong> is valid for no more than 24 hours. Please handle disconnections and reconnections properly.</li>
+<li>All trading pair names in the symbol must be in <strong>uppercase</strong>. For example: <code>spot@public.aggre.deals.v3.api.pb@(100ms|10ms)@&lt;symbol&gt;</code><br/>
+Example: <code>spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT</code></li>
+<li>If there is no valid subscription on the websocket, the server will actively disconnect after <strong>30 seconds</strong>. If the subscription is successful but there is no data flow, the server will disconnect after <strong>one minute</strong>. The client can send a ping to keep the connection alive.</li>
+<li>One ws connection supports a maximum of 30 subscriptions.</li>
+<li>Please process the data according to the parameters returned in the documentation. Parameters not returned in the documentation will be optimized soon, so please do not use them.</li>
+</ul>

@@ -1,0 +1,7 @@
+<h2 id="http-return-codes">HTTP Return Codes</h2>
+<ul>
+<li>HTTP 4XX return codes are used for malformed requests; the issue is on the sender's side.</li>
+<li>HTTP 403 return code is used when the WAF Limit (Web Application Firewall) has been violated.</li>
+<li>HTTP 429 return code is used when breaking a request rate limit.</li>
+<li>HTTP 5XX return codes are used for internal errors; the issue is on MEXC's side. It is important to NOT treat this as a failure operation; the execution status is UNKNOWN and could have been a success.</li>
+</ul>

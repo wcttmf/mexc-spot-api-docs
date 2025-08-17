@@ -1,0 +1,98 @@
+<h2 id="account-information">Account Information</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"canTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"canWithdraw"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"canDeposit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updateTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NBNTEST"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111078"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAIN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1020000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"SPOT"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/account</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_ACCOUNT_READ</p>
+<p><strong>Weight(IP):</strong> 10</p>
+<p>Get current account information,rate limit:2 times/s.</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>recvWindow</td>
+<td>long</td>
+<td>NO</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>long</td>
+<td>YES</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>canTrade</td>
+<td>Can Trade</td>
+</tr>
+<tr>
+<td>canWithdraw</td>
+<td>Can Withdraw</td>
+</tr>
+<tr>
+<td>canDeposit</td>
+<td>Can Deposit</td>
+</tr>
+<tr>
+<td>updateTime</td>
+<td>Update Time</td>
+</tr>
+<tr>
+<td>accountType</td>
+<td>Account type</td>
+</tr>
+<tr>
+<td>balances</td>
+<td>Balance</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>Asset coin</td>
+</tr>
+<tr>
+<td>free</td>
+<td>Available  coin</td>
+</tr>
+<tr>
+<td>locked</td>
+<td>Forzen coin</td>
+</tr>
+<tr>
+<td>permissions</td>
+<td>Permission</td>
+</tr>
+</tbody></table>

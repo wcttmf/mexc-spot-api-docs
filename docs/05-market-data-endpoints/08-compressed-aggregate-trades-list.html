@@ -1,0 +1,102 @@
+<h2 id="compressed-aggregate-trades-list">Compressed/Aggregate Trades List</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"a"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"f"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"l"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"p"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46782.67"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"q"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0038"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"T"</span><span class="p">:</span><span class="w"> </span><span class="mi">1641380483000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"M"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/aggTrades</code></li>
+</ul>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Get compressed, aggregate trades. Trades that fill at the time, from the same order, with the same price will have the quantity aggregated.</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+<th>Scope</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>YES</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>long</td>
+<td>NO</td>
+<td>Timestamp in ms to get aggregate trades from INCLUSIVE.</td>
+<td></td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>long</td>
+<td>NO</td>
+<td>Timestamp in ms to get aggregate trades until INCLUSIVE.</td>
+<td></td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>NO</td>
+<td></td>
+<td>Default 500; max 1000.</td>
+</tr>
+</tbody></table>
+<p>startTime and endTime must be used at the same time.</p>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>a</td>
+<td>Aggregate tradeId</td>
+</tr>
+<tr>
+<td>f</td>
+<td>First tradeId</td>
+</tr>
+<tr>
+<td>l</td>
+<td>Last tradeId</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Price</td>
+</tr>
+<tr>
+<td>q</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>m</td>
+<td>Was the buyer the maker?</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Was the trade the best price match?</td>
+</tr>
+</tbody></table>

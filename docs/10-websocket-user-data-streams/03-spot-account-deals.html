@@ -1,0 +1,107 @@
+<h2 id="spot-account-deals">Spot Account Deals</h2>
+<blockquote>
+<p><strong>Request:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"spot@private.deals.v3.api.pb"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><strong>Response:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">channel:</span><span class="w"> </span><span class="s2">"spot@private.deals.v3.api.pb"</span><span class="p">,</span><span class="w">
+  </span><span class="err">symbol:</span><span class="w"> </span><span class="s2">"MXUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="err">sendTime:</span><span class="w"> </span><span class="mi">1736417034332</span><span class="p">,</span><span class="w">
+  </span><span class="err">privateDeals</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">price:</span><span class="w"> </span><span class="s2">"3.6962"</span><span class="p">,</span><span class="w">
+    </span><span class="err">quantity:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">amount:</span><span class="w"> </span><span class="s2">"3.6962"</span><span class="p">,</span><span class="w">
+    </span><span class="err">tradeType:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="err">tradeId:</span><span class="w"> </span><span class="s2">"505979017439002624X1"</span><span class="p">,</span><span class="w">
+    </span><span class="err">orderId:</span><span class="w"> </span><span class="s2">"C02__505979017439002624115"</span><span class="p">,</span><span class="w">
+    </span><span class="err">feeAmount:</span><span class="w"> </span><span class="s2">"0.0003998377369698171"</span><span class="p">,</span><span class="w">
+    </span><span class="err">feeCurrency:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+    </span><span class="err">time:</span><span class="w"> </span><span class="mi">1736417034280</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Request Parameter:</strong> <code>spot@private.deals.v3.api.pb</code></p>
+<p><strong>Response Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>sendTime</td>
+<td>long</td>
+<td>Event time</td>
+</tr>
+<tr>
+<td>privateDeals</td>
+<td>json</td>
+<td>Account trade information</td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Trade price</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>string</td>
+<td>Trade quantity</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>Trade amount</td>
+</tr>
+<tr>
+<td>tradeType</td>
+<td>int</td>
+<td>Trade type (1: Buy, 2: Sell)</td>
+</tr>
+<tr>
+<td>tradeId</td>
+<td>string</td>
+<td>Trade ID</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>Order ID</td>
+</tr>
+<tr>
+<td>clientOrderId</td>
+<td>string</td>
+<td>User-defined order ID</td>
+</tr>
+<tr>
+<td>feeAmount</td>
+<td>string</td>
+<td>Fee amount</td>
+</tr>
+<tr>
+<td>feeCurrency</td>
+<td>string</td>
+<td>Fee currency</td>
+</tr>
+<tr>
+<td>time</td>
+<td>long</td>
+<td>Trade time</td>
+</tr>
+</tbody></table>
+<hr/>

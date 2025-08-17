@@ -1,0 +1,93 @@
+<h2 id="deposit-address-supporting-network">Deposit Address (supporting network)</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get /api/v3/capital/deposit/address?coin=USDT&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRC20"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TXobiKkdciupZrhdvZyTSSLjE8CmZAufS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BEP20(BSC)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xebe4804f7ecc22d5011c42e6ea1f2e6c891d89b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x3f4d1f43761b52fd594e5a77cd83cab6955e85b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/capital/deposit/address</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_WITHDRAW_READ</p>
+<p><strong>Weight(IP):</strong> 10</p>
+<p>Parameters: </p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">coin</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">coin</td>
+</tr>
+<tr>
+<td style="text-align: left">network</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">deposit network</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">deposit address</td>
+</tr>
+<tr>
+<td style="text-align: left">coin</td>
+<td style="text-align: left">coin</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">memo</td>
+</tr>
+<tr>
+<td style="text-align: left">network</td>
+<td style="text-align: left">network</td>
+</tr>
+</tbody></table>

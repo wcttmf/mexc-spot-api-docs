@@ -1,0 +1,200 @@
+<h2 id="exchange-information">Exchange Information</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOMO3LUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOMO3L"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseAssetPrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quotePrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quoteAssetPrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseCommissionPrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quoteCommissionPrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LIMIT_MAKER"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"quoteOrderQtyMarketAllowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isSpotTradingAllowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isMarginTradingAllowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quoteAmountPrecision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseSizePrecision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"LIMIT"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"maxQuoteAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"makerCommission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"takerCommission"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tradeSideType"</span><span class="p">:</span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/exchangeInfo</code></li>
+</ul>
+<p>Current exchange trading rules and symbol information</p>
+<p><strong>Weight(IP):</strong> 10</p>
+<p><strong>Parameter</strong>:</p>
+<p>There are 3 possible options:</p>
+<table><thead>
+<tr>
+<th>Method</th>
+<th><strong>Example</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td>No parameter</td>
+<td>curl -X GET "https://api.mexc.com/api/v3/exchangeInfo"</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>curl -X GET "https://api.mexc.com/api/v3/exchangeInfo?symbol=MXUSDT"</td>
+</tr>
+<tr>
+<td>symbols</td>
+<td>curl -X GET "https://api.mexc.com/api/v3/exchangeInfo?symbols=MXUSDT,BTCUSDT"</td>
+</tr>
+</tbody></table>
+<p><strong>Response:</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">timezone</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">timezone</td>
+</tr>
+<tr>
+<td style="text-align: left">serverTime</td>
+<td style="text-align: left">long</td>
+<td style="text-align: left">server Time</td>
+</tr>
+<tr>
+<td style="text-align: left">rateLimits</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">rate Limits</td>
+</tr>
+<tr>
+<td style="text-align: left">exchangeFilters</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">exchange Filters</td>
+</tr>
+<tr>
+<td style="text-align: left">symbol</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">symbol</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">status:1 - online, 2 - Pause, 3 - offline</td>
+</tr>
+<tr>
+<td style="text-align: left">baseAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">base Asset</td>
+</tr>
+<tr>
+<td style="text-align: left">baseAssetPrecision</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">base Asset Precision</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteAsset</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">quote Asset</td>
+</tr>
+<tr>
+<td style="text-align: left">quotePrecision</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">quote Precision</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteAssetPrecision</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">quote Asset Precision</td>
+</tr>
+<tr>
+<td style="text-align: left">baseCommissionPrecision</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">base Commission Precision</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteCommissionPrecision</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">quote Commission Precision</td>
+</tr>
+<tr>
+<td style="text-align: left">orderTypes</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left"><a href="#order_type">Order Type</a></td>
+</tr>
+<tr>
+<td style="text-align: left">quoteOrderQtyMarketAllowed</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">quoteOrderQtyMarketAllowed</td>
+</tr>
+<tr>
+<td style="text-align: left">isSpotTradingAllowed</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">allow api spot trading</td>
+</tr>
+<tr>
+<td style="text-align: left">isMarginTradingAllowed</td>
+<td style="text-align: left">Boolean</td>
+<td style="text-align: left">allow api margin trading</td>
+</tr>
+<tr>
+<td style="text-align: left">permissions</td>
+<td style="text-align: left">Array</td>
+<td style="text-align: left">permissions</td>
+</tr>
+<tr>
+<td style="text-align: left">maxQuoteAmount</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">max Quote Amount</td>
+</tr>
+<tr>
+<td style="text-align: left">makerCommission</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">marker Commission</td>
+</tr>
+<tr>
+<td style="text-align: left">takerCommission</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">taker Commission</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteAmountPrecision</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">min order amount</td>
+</tr>
+<tr>
+<td style="text-align: left">baseSizePrecision</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">min order quantity</td>
+</tr>
+<tr>
+<td style="text-align: left">quoteAmountPrecisionMarket</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">min order amount  in market order</td>
+</tr>
+<tr>
+<td style="text-align: left">maxQuoteAmountMarket</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">max quote Amount in market order</td>
+</tr>
+<tr>
+<td style="text-align: left">tradeSideType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">tradeSide Type:1 - All, 2 - buy order only, 3 - Sell order only, 4 - Close</td>
+</tr>
+</tbody></table>

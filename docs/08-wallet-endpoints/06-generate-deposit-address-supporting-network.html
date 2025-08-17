@@ -1,0 +1,87 @@
+<h2 id="generate-deposit-address-supporting-network">Generate deposit address (supporting network)</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post /api/v3/capital/deposit/address?coin=EOS&amp;network=EOS&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRC20"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TXobiKkdciupZrhdvZyTSSLjE8CmZAufS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EOS"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EOS"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zzqqqqqqqqqq"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX10068"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>POST</strong> <code>/api/v3/capital/deposit/address</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_WITHDRAW_WRITE</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Parameters: </p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">coin</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">coin</td>
+</tr>
+<tr>
+<td style="text-align: left">network</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">deposit network</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">deposit address</td>
+</tr>
+<tr>
+<td style="text-align: left">coin</td>
+<td style="text-align: left">coin</td>
+</tr>
+<tr>
+<td style="text-align: left">memo</td>
+<td style="text-align: left">memo</td>
+</tr>
+<tr>
+<td style="text-align: left">network</td>
+<td style="text-align: left">network</td>
+</tr>
+</tbody></table>

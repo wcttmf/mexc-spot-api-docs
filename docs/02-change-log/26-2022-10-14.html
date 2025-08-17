@@ -1,0 +1,10 @@
+<h2 id="2022-10-14"><strong>2022-10-14</strong></h2>
+<ul>
+<li>Update Endpoints <a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#wallet-endpoints">Wallet Endpoints</a>:</li>
+</ul>
+<p>1.<a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#withdraw">Withdraw</a>: When do a withdraw, <code>address</code> and <code>memo</code> should be passed separate (The previous version the memo is joined with a ":" after address).</p>
+<p>2.<a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#withdraw-history-supporting-network">Withdraw History</a>: Parameters <code>address</code> and <code>memo</code> should be returned separate (The previous version the memo is joined with a ":" after address).</p>
+<p>3.<a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#deposit-history-supporting-network">Deposit Address</a>: The return parameter  <code>tag</code> is changed to <code>memo</code>, and the memo required for deposite is returned in the <code>memo</code> parameter.</p>
+<p>4.<a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#deposit-history-supporting-network">Deposit History</a>: The return parameter  <code>addressTag</code> is changed to <code>memo</code>, and the memo required for deposite is returned in the <code>memo</code> parameter.</p>
+<p>5.Add <a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#withdraw-history-supporting-network">Generate deposit address</a></p>
+<p>6.<a href="https://mexcdevelop.github.io/apidocs/spot_v3_en/#query-the-currency-information">Query the currency information</a>: add <code>withdrawTips</code> and <code>depositTips</code> params。</p>

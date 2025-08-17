@@ -1,0 +1,382 @@
+<h2 id="error-code">Error Code</h2>
+<p>The following error information can be returend</p>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>-2011</td>
+<td>Unknown order sent</td>
+</tr>
+<tr>
+<td>26</td>
+<td>operation not allowed</td>
+</tr>
+<tr>
+<td>400</td>
+<td>api key required</td>
+</tr>
+<tr>
+<td>401</td>
+<td>No authority</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Access Denied</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>service not available, please try again</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Gateway Time-out</td>
+</tr>
+<tr>
+<td>602</td>
+<td>Signature verification failed</td>
+</tr>
+<tr>
+<td>10001</td>
+<td>user does not exist</td>
+</tr>
+<tr>
+<td>10007</td>
+<td>bad symbol</td>
+</tr>
+<tr>
+<td>10015</td>
+<td>user id cannot be null</td>
+</tr>
+<tr>
+<td>10072</td>
+<td>invalid access key</td>
+</tr>
+<tr>
+<td>10073</td>
+<td>invalid Request-Time</td>
+</tr>
+<tr>
+<td>10095</td>
+<td>amount cannot be null</td>
+</tr>
+<tr>
+<td>10096</td>
+<td>amount decimal places is too long</td>
+</tr>
+<tr>
+<td>10097</td>
+<td>amount is error</td>
+</tr>
+<tr>
+<td>10098</td>
+<td>risk control system detected abnormal</td>
+</tr>
+<tr>
+<td>10099</td>
+<td>user sub account does not open</td>
+</tr>
+<tr>
+<td>10100</td>
+<td>this currency transfer is not supported</td>
+</tr>
+<tr>
+<td>10101</td>
+<td>Insufficient balance</td>
+</tr>
+<tr>
+<td>10102</td>
+<td>amount cannot be zero or negative</td>
+</tr>
+<tr>
+<td>10103</td>
+<td>this account transfer is not supported</td>
+</tr>
+<tr>
+<td>10200</td>
+<td>transfer operation processing</td>
+</tr>
+<tr>
+<td>10201</td>
+<td>transfer in failed</td>
+</tr>
+<tr>
+<td>10202</td>
+<td>transfer out failed</td>
+</tr>
+<tr>
+<td>10206</td>
+<td>transfer is disabled</td>
+</tr>
+<tr>
+<td>10211</td>
+<td>transfer is forbidden</td>
+</tr>
+<tr>
+<td>10212</td>
+<td>This withdrawal address is not on the commonly used address list or has been invalidated</td>
+</tr>
+<tr>
+<td>10216</td>
+<td>no address available. Please try again later</td>
+</tr>
+<tr>
+<td>10219</td>
+<td>asset flow writing failed please try again</td>
+</tr>
+<tr>
+<td>10222</td>
+<td>currency cannot be null</td>
+</tr>
+<tr>
+<td>10232</td>
+<td>currency does not exist</td>
+</tr>
+<tr>
+<td>10259</td>
+<td>Intermediate account does not configured in redisredis</td>
+</tr>
+<tr>
+<td>10265</td>
+<td>Due to risk control, withdrawal is unavailable, please try again later</td>
+</tr>
+<tr>
+<td>10268</td>
+<td>remark length is too long</td>
+</tr>
+<tr>
+<td>20001</td>
+<td>subsystem is not supported</td>
+</tr>
+<tr>
+<td>20002</td>
+<td>Internal system error please contact support</td>
+</tr>
+<tr>
+<td>22222</td>
+<td>record does not exist</td>
+</tr>
+<tr>
+<td>30000</td>
+<td>suspended transaction for the symbol</td>
+</tr>
+<tr>
+<td>30001</td>
+<td>The current transaction direction is not allowed to place an order</td>
+</tr>
+<tr>
+<td>30002</td>
+<td>The minimum transaction volume cannot be less than :</td>
+</tr>
+<tr>
+<td>30003</td>
+<td>The maximum transaction volume cannot be greater than :</td>
+</tr>
+<tr>
+<td>30004</td>
+<td>Insufficient position</td>
+</tr>
+<tr>
+<td>30005</td>
+<td>Oversold</td>
+</tr>
+<tr>
+<td>30010</td>
+<td>no valid trade price</td>
+</tr>
+<tr>
+<td>30014</td>
+<td>invalid symbol</td>
+</tr>
+<tr>
+<td>30016</td>
+<td>trading disabled</td>
+</tr>
+<tr>
+<td>30018</td>
+<td>market order is disabled</td>
+</tr>
+<tr>
+<td>30019</td>
+<td>api market order is disabled</td>
+</tr>
+<tr>
+<td>30020</td>
+<td>no permission for the symbol</td>
+</tr>
+<tr>
+<td>30021</td>
+<td>invalid symbol</td>
+</tr>
+<tr>
+<td>30025</td>
+<td>no exist opponent order</td>
+</tr>
+<tr>
+<td>30026</td>
+<td>invalid order ids</td>
+</tr>
+<tr>
+<td>30027</td>
+<td>The currency has reached the maximum position limit, the buying is suspended</td>
+</tr>
+<tr>
+<td>30028</td>
+<td>The currency triggered the platform risk control, the selling is suspended</td>
+</tr>
+<tr>
+<td>30029</td>
+<td>Cannot exceed the maximum order limit</td>
+</tr>
+<tr>
+<td>30032</td>
+<td>Cannot exceed the maximum position</td>
+</tr>
+<tr>
+<td>30041</td>
+<td>current order type can not place order</td>
+</tr>
+<tr>
+<td>33333</td>
+<td>param is error</td>
+</tr>
+<tr>
+<td>44444</td>
+<td>param cannot be null</td>
+</tr>
+<tr>
+<td>60005</td>
+<td>your account is abnormal</td>
+</tr>
+<tr>
+<td>70011</td>
+<td>Pair user ban trade apikey</td>
+</tr>
+<tr>
+<td>700001</td>
+<td>API-key format invalid</td>
+</tr>
+<tr>
+<td>700002</td>
+<td>Signature for this request is not valid</td>
+</tr>
+<tr>
+<td>700003</td>
+<td>Timestamp for this request is outside of the recvWindow</td>
+</tr>
+<tr>
+<td>700004</td>
+<td>Param 'origClientOrderId' or 'orderId' must be sent, but both were empty/null</td>
+</tr>
+<tr>
+<td>700005</td>
+<td>recvWindow must less than 60000</td>
+</tr>
+<tr>
+<td>700006</td>
+<td>IP non white list</td>
+</tr>
+<tr>
+<td>700007</td>
+<td>No permission to access the endpoint</td>
+</tr>
+<tr>
+<td>700008</td>
+<td>Illegal characters found in parameter</td>
+</tr>
+<tr>
+<td>730001</td>
+<td>Pair not found</td>
+</tr>
+<tr>
+<td>730002</td>
+<td>Your input param is invalid</td>
+</tr>
+<tr>
+<td>730000</td>
+<td>Request failed, please contact the customer service</td>
+</tr>
+<tr>
+<td>730001</td>
+<td>User information error</td>
+</tr>
+<tr>
+<td>730002</td>
+<td>Parameter error</td>
+</tr>
+<tr>
+<td>730003</td>
+<td>Unsupported operation, please contact the customer service</td>
+</tr>
+<tr>
+<td>730100</td>
+<td>Unusual user status</td>
+</tr>
+<tr>
+<td>730600</td>
+<td>Sub-account Name cannot be null</td>
+</tr>
+<tr>
+<td>730601</td>
+<td>Sub-account Name must be a combination of 8-32 letters and numbers</td>
+</tr>
+<tr>
+<td>730602</td>
+<td>Sub-account remarks cannot be null</td>
+</tr>
+<tr>
+<td>730700</td>
+<td>API KEY remarks cannot be null</td>
+</tr>
+<tr>
+<td>730701</td>
+<td>API KEY permission cannot be null</td>
+</tr>
+<tr>
+<td>730702</td>
+<td>API KEY permission does not exist</td>
+</tr>
+<tr>
+<td>730703</td>
+<td>The IP information is incorrect, and a maximum of 10 IPs are allowed to be bound only</td>
+</tr>
+<tr>
+<td>730704</td>
+<td>The bound IP format is incorrect, please refill</td>
+</tr>
+<tr>
+<td>730705</td>
+<td>At most 30 groups of Api Keys are allowed to be created only</td>
+</tr>
+<tr>
+<td>730706</td>
+<td>API KEY information does not exist</td>
+</tr>
+<tr>
+<td>730707</td>
+<td>accessKey cannot be null</td>
+</tr>
+<tr>
+<td>730101</td>
+<td>The user Name already exists</td>
+</tr>
+<tr>
+<td>140001</td>
+<td>sub account does not exist</td>
+</tr>
+<tr>
+<td>140002</td>
+<td>sub account is forbidden</td>
+</tr>
+</tbody></table>
+<h1 id="market-data-endpoints">Market Data Endpoints</h1>

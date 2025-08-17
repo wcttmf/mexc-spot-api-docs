@@ -1,0 +1,135 @@
+<h2 id="signed">SIGNED</h2>
+<ul>
+<li>SIGNED endpoints require an additional parameter, signature, to be sent in the query string or request body(in the API of batch operation, if there are special symbols such as comma in the parameter value, these symbols need to be URL encoded when signing,and encode only support uppercase).</li>
+<li>Endpoints use HMAC SHA256 signatures. The HMAC SHA256 signature is a keyed HMAC SHA256 operation. Use your secretKey as the key and totalParams as the value for the HMAC operation.</li>
+<li>The signature is support lowercase only.</li>
+<li>totalParams is defined as the query string concatenated with the request body.</li>
+</ul>
+<h3 id="timing-security">Timing security</h3>
+<blockquote>
+<p>The logic is as follows:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code> if (timestamp &lt; (serverTime + 1000) &amp;&amp; (serverTime - timestamp) &lt;= recvWindow)
+  {
+    // process request
+  } 
+  else 
+  {
+    // reject request
+  }
+</code></pre></div>
+<ul>
+<li>A SIGNED endpoint also requires a parameter, timestamp, to be sent which should be the millisecond timestamp of when the request was created and sent.</li>
+<li>An additional parameter, recvWindow, may be sent to specify the number of milliseconds after timestamp the request is valid for. If recvWindow is not sent, it defaults to 5000.</li>
+</ul>
+<p>Serious trading is about timing. Networks can be unstable and unreliable, which can lead to requests taking varying amounts of time to reach the servers. With recvWindow, you can specify that the request must be processed within a certain number of milliseconds or be rejected by the server.</p>
+<aside class="notice"> It is recommended to use a small recvWindow of 5000 or less! The max cannot go beyond 60,000!</aside>
+<h3 id="signed-endpoint-examples-for-post-api-v3-order">SIGNED Endpoint Examples for POST /api/v3/order</h3>
+<blockquote>
+<p>Example 1</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HMAC SHA256 signature:
+
+    <span class="nv">$ </span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087"</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"45d0b3c26f2644f19bfb98b07741b2f5"</span>
+    <span class="o">(</span>stdin<span class="o">)=</span> 323c96ab85a745712e95e63cad28903dd8292e4a905e99c4ee3932023843a117
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nb">command</span>:
+
+    <span class="o">(</span>HMAC SHA256<span class="o">)</span>
+    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-MEXC-APIKEY: mx0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.mexc.com/api/v3/order'</span> <span class="nt">-d</span> <span class="s1">'symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=323c96ab85a745712e95e63cad28903dd8292e4a905e99c4ee3932023843a117'</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example 2</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HMAC SHA256 signature:
+
+    <span class="nv">$ </span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087"</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"45d0b3c26f2644f19bfb98b07741b2f5"</span>
+    <span class="o">(</span>stdin<span class="o">)=</span> fd3e4e8543c5188531eb7279d68ae7d26a573d0fc5ab0d18eb692451654d837a
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nb">command</span>:
+
+    <span class="o">(</span>HMAC SHA256<span class="o">)</span>
+    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-MEXC-APIKEY: mx0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.mexc.com/api/v3/order'</span> <span class="nt">-d</span> <span class="s1">'symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=fd3e4e8543c5188531eb7279d68ae7d26a573d0fc5ab0d18eb692451654d837a'</span>
+
+</code></pre></div>
+<blockquote>
+<p>Example 3</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>HMAC SHA256 signature:
+
+    <span class="nv">$ </span><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"symbol=BTCUSDT&amp;side=BUY&amp;type=LIMITquantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087"</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="s2">"45d0b3c26f2644f19bfb98b07741b2f5"</span>
+    <span class="o">(</span>stdin<span class="o">)=</span> d1a676610ceb39174c8039b3f548357994b2a34139a8addd33baadba65684592
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nb">command</span>:
+
+    <span class="o">(</span>HMAC SHA256<span class="o">)</span>
+    <span class="nv">$ </span>curl <span class="nt">-H</span> <span class="s2">"X-MEXC-APIKEY: mx0aBYs33eIilxBWC5"</span> <span class="nt">-X</span> POST <span class="s1">'https://api.mexc.com/api/v3/order?symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT'</span> <span class="nt">-d</span> <span class="s1">'quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087&amp;signature=d1a676610ceb39174c8039b3f548357994b2a34139a8addd33baadba65684592'</span>
+
+</code></pre></div>
+<p>Here is a step-by-step example of how to send a vaild signed payload from the Linux command line using echo, openssl, and curl.</p>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>apiKey</td>
+<td>mx0aBYs33eIilxBWC5</td>
+</tr>
+<tr>
+<td>secretKey</td>
+<td>45d0b3c26f2644f19bfb98b07741b2f5</td>
+</tr>
+</tbody></table>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>BTCUSDT</td>
+</tr>
+<tr>
+<td>side</td>
+<td>BUY</td>
+</tr>
+<tr>
+<td>type</td>
+<td>LIMIT</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>1</td>
+</tr>
+<tr>
+<td>price</td>
+<td>11</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>1644489390087</td>
+</tr>
+</tbody></table>
+<h4 id="example-1-as-a-request-body"><strong>Example 1: As a request body</strong></h4>
+<ul>
+<li>requestBody:
+symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087</li>
+</ul>
+<p><strong>Example 2: As a query string</strong></p>
+<ul>
+<li>queryString:
+symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT&amp;quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087</li>
+</ul>
+<p><strong>Example 3: Mixed query string and request body</strong></p>
+<ul>
+<li><p>queryString:
+symbol=BTCUSDT&amp;side=BUY&amp;type=LIMIT</p></li>
+<li><p>requestBody:
+quantity=1&amp;price=11&amp;recvWindow=5000&amp;timestamp=1644489390087</p></li>
+</ul>
+<p>Note that the signature is different in example 3. There is no &amp; between "LIMIT" and "quantity=1".</p>

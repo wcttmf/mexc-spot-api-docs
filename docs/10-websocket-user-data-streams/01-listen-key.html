@@ -1,0 +1,98 @@
+<h2 id="listen-key">Listen Key</h2><h3 id="generate-listen-key">Generate Listen Key</h3>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"listenKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Required Permissions:</strong> Account Read / SPOT_ACCOUNT_R</p>
+<p><strong>HTTP Request</strong></p>
+<ul>
+<li><strong>POST</strong> <code>/api/v3/userDataStream</code></li>
+</ul>
+<p>Starts a new data stream. The stream will close 60 minutes after creation unless a keepalive is sent.</p>
+<p><strong>Parameters:</strong></p>
+<p>NONE</p>
+<hr/>
+<h3 id="get-valid-listen-keys">Get Valid Listen Keys</h3>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"listenKey"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"c285bc363cfeac6646576b801a2ed1f9523310fcda9e927e509aaaaaaaaaaaaaa"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"87cb8da0fb150e36c232c2c060bc3848693312008caf3acae73bbbbbbbbbbbb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dc027517ebee2328b75268461a9df4d21addfac6ebebab8f5a6cccccccccccccc"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Required Permissions:</strong> Account Read / SPOT_ACCOUNT_R</p>
+<p><strong>HTTP Request</strong></p>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/userDataStream</code></li>
+</ul>
+<p>Retrieves all currently valid listen keys.</p>
+<p><strong>Parameters:</strong></p>
+<p>NONE</p>
+<hr/>
+<h3 id="extend-listen-key-validity">Extend Listen Key Validity</h3>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"listenKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>HTTP Request</strong></p>
+<ul>
+<li><strong>PUT</strong> <code>/api/v3/userDataStream</code></li>
+</ul>
+<p>Extends the validity to 60 minutes from the time of this call. It is recommended to send a request every 30 minutes.</p>
+<p><strong>Request Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listenKey</td>
+<td>string</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr/>
+<h3 id="close-listen-key">Close Listen Key</h3>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"listenKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pqia91ma19a5s61cv6a81va65sdf19v8a65a1a5s61cv6a81va65sdf19v8a65a1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>HTTP Request</strong></p>
+<ul>
+<li><strong>DELETE</strong> <code>/api/v3/userDataStream</code></li>
+</ul>
+<p>Closes the user data stream.</p>
+<p><strong>Request Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>listenKey</td>
+<td>string</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr/>

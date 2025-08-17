@@ -1,0 +1,79 @@
+<h2 id="symbol-order-book-ticker">Symbol Order Book Ticker</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AEUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bidPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bidQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115.59"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"askPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11127"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"askQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215.48"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="err">OR</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AEUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115.59"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11127"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215.48"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AEUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bidQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"115.59"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.11127"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"askQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215.48"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/ticker/bookTicker</code></li>
+</ul>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Best price/qty on the order book for a symbol or symbols.</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>NO</td>
+<td>If the symbol is not sent, all symbols will be returned in an array.</td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>Symbol</td>
+</tr>
+<tr>
+<td>bidPrice</td>
+<td>Best bid price</td>
+</tr>
+<tr>
+<td>bidQty</td>
+<td>Best bid quantity</td>
+</tr>
+<tr>
+<td>askPrice</td>
+<td>Best ask price</td>
+</tr>
+<tr>
+<td>askQty</td>
+<td>Best ask quantity</td>
+</tr>
+</tbody></table>
+<h1 id="sub-account-endpoints">Sub-Account Endpoints</h1>

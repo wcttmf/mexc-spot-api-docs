@@ -1,0 +1,57 @@
+<h2 id="query-the-apikey-of-a-sub-account-for-master-account">Query the APIKey of a sub-account (For Master Account)</h2>
+<p>Applies to master accounts only</p>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">   </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"subAccount"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="s2">"v5"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="s2">"arg13sdfgs"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"permissions"</span><span class="p">:</span><span class="s2">"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ip"</span><span class="p">:</span><span class="s2">"1.1.1.1,2.2.2.2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"creatTime"</span><span class="p">:</span><span class="mi">1597026383085</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="s2">"v5.1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"apiKey"</span><span class="p">:</span><span class="s2">"arg13sdfgs12"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"permissions"</span><span class="p">:</span><span class="s2">"SPOT_ACCOUNT_READ,SPOT_ACCOUNT_WRITE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ip"</span><span class="p">:</span><span class="s2">"1.1.1.1,2.2.2.2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"creatTime"</span><span class="p">:</span><span class="mi">1597026383085</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>GET/api/v3/sub-account/apiKey<br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_ACCOUNT_READ</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>STRING</td>
+<td>YES</td>
+<td>Sub-account Name</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>LONG</td>
+<td>NO</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>YES</td>
+<td></td>
+</tr>
+</tbody></table>

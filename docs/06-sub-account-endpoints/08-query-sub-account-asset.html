@@ -1,0 +1,181 @@
+<h2 id="query-sub-account-asset">Query Sub-account Asset</h2>
+<blockquote>
+<p>request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get /api/v3/sub-account/asset?subAccount=account1&amp;accountType=SPOT&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"free"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0003"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/sub-account/asset</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_TRANSFER_READ</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p><strong>request</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">subAccount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">subAccount name,only support query for single subaccount</td>
+</tr>
+<tr>
+<td style="text-align: left">accountType</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">account type:"SPOT","FUTURES",only support SPOT currently</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p><strong>response</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">balances</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">balance</td>
+</tr>
+<tr>
+<td style="text-align: left">asset</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">asset</td>
+</tr>
+<tr>
+<td style="text-align: left">free</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">free</td>
+</tr>
+<tr>
+<td style="text-align: left">locked</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">locked</td>
+</tr>
+</tbody></table>
+ ## Enable Futures for Sub-account (For Master Account)
+
+> Request
+
+```
+post /api/v3/sub-account/futures
+```
+
+> Response
+
+```json
+  {
+    "code": "0",
+    "message": "",
+    "data": [{
+        "subAccount": "mexc1",
+        "isFuturesEnabled": true,
+        "timestamp": "1597026383085"
+    }]
+  }
+```
+
+- **POST** ```/api/v3/sub-account/futures```  
+
+**Permission:** SPOT_ACCOUNT_READ
+
+**Weight(IP):** 1
+
+**Parameters:**
+
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|subAccount|string|YES|subaccount Name|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|sign|
+
+**Response:**
+
+| Name  |Type | Description|
+| :------------ | :-------- | :--------|
+|subAccount|string|subaccount Name|
+|isFuturesEnabled|boolean|isFuturesEnabled:true|
+|timestamp|string|response time| 
+ ## Enable Margin for Sub-account (For Master Account)
+
+> Request
+
+```
+post /api/v3/sub-account/margin
+```
+
+> Response
+
+```json
+{
+  "code": "0",
+  "message": "",
+  "data": [{
+      "subAccount": "mexc1",
+      "isMarginEnabled": true,
+      "timestamp": "1597026383085"
+  }]
+}
+```
+
+- **POST** ```/api/v3/sub-account/margin```  
+
+**Permission:** SPOT_ACCOUNT_READ
+
+**Weight(IP):** 1
+
+**Parameters:**
+
+| Name | Type| Mandatory  | Description | 
+| :------ | :-------- | :-------- | :---------- |
+|subAccount|string|YES|subaccount Name|
+|timestamp|string|YES|timestamp|
+|signature|string|YES|sign|
+
+**Response:**
+
+| Name  |Type | Description|
+| :------------ | :-------- | :--------|
+|subAccount|string|subaccount Name|
+|isMarginEnabled|booleanisMarginEnabled:true or false|
+|timestamp|string|response time|
+
+ 
+<h1 id="spot-account-trade">Spot Account/Trade</h1>

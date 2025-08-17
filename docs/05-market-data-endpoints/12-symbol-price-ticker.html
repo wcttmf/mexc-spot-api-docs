@@ -1,0 +1,74 @@
+<h2 id="symbol-price-ticker">Symbol Price Ticker</h2>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"184.34"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="err">or</span><span class="w">
+</span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6.65"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETHUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.65"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/ticker/price</code></li>
+</ul>
+<p><strong>Weight(IP):</strong> </p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Symbols Provided</th>
+<th>Weight</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>symbols</td>
+<td>all</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>NO</td>
+<td>If the symbol is not sent, all symbols will be returned in an array.</td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>Last price</td>
+</tr>
+</tbody></table>

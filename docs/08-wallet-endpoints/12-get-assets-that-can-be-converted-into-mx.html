@@ -1,0 +1,87 @@
+<h2 id="get-assets-that-can-be-converted-into-mx">Get Assets That Can Be Converted Into MX</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get {{api_url}}/api/v3/capital/convert/list?timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"convertMx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000009"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"convertUsdt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000009"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000441"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30021"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxx"</span><span class="w">
+ </span><span class="p">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+           </span><span class="nl">"convertMx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000009"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"convertUsdt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000009"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000441"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30021"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxx"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/capital/convert/list</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_ACCOUNT_READ</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">convertMx</td>
+<td style="text-align: left">MX amount（Deducted commission fee）</td>
+</tr>
+<tr>
+<td style="text-align: left">convertUsdt</td>
+<td style="text-align: left">usdt amount</td>
+</tr>
+<tr>
+<td style="text-align: left">balance</td>
+<td style="text-align: left">Convertible balance</td>
+</tr>
+<tr>
+<td style="text-align: left">asset</td>
+<td style="text-align: left">asset</td>
+</tr>
+<tr>
+<td style="text-align: left">code</td>
+<td style="text-align: left">code</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">message</td>
+</tr>
+</tbody></table>

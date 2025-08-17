@@ -1,0 +1,85 @@
+<h2 id="dust-transfer">Dust Transfer</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>post {{api_url}}/api/v3/capital/convert?asset=BTC,FIL,ETH&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"successList"</span><span class="p">:[</span><span class="s2">"ALGO"</span><span class="p">,</span><span class="s2">"OMG"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"failedList"</span><span class="p">:[],</span><span class="w">
+  </span><span class="nl">"totalConvert"</span><span class="p">:</span><span class="s2">"0.07085578"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"convertFee"</span><span class="p">:</span><span class="s2">"0.00071571"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>POST</strong> <code>/api/v3/capital/convert</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_ACCOUNT_W</p>
+<p><strong>Weight(IP):</strong> 10</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">asset</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">The asset being converted.(max 15 assert)eg:asset=BTC,FIL,ETH</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">signature</td>
+</tr>
+</tbody></table>
+<p>Response:</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">totalConvert</td>
+<td style="text-align: left">Convert MX amount(Deducted commission fee)</td>
+</tr>
+<tr>
+<td style="text-align: left">convertFee</td>
+<td style="text-align: left">convertFee</td>
+</tr>
+<tr>
+<td style="text-align: left">successList</td>
+<td style="text-align: left">convert success List</td>
+</tr>
+<tr>
+<td style="text-align: left">failedList</td>
+<td style="text-align: left">convert failed List</td>
+</tr>
+<tr>
+<td style="text-align: left">-asset</td>
+<td style="text-align: left">asset</td>
+</tr>
+<tr>
+<td style="text-align: left">-message</td>
+<td style="text-align: left">message</td>
+</tr>
+<tr>
+<td style="text-align: left">-code</td>
+<td style="text-align: left">code</td>
+</tr>
+</tbody></table>

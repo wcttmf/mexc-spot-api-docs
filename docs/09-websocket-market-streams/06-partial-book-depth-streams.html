@@ -1,0 +1,78 @@
+<h2 id="partial-book-depth-streams">Partial Book Depth Streams</h2>
+<p>This stream pushes limited level depth information. The “levels” indicate the number of order levels for buy and sell orders, which can be 5, 10, or 20 levels.</p>
+<blockquote>
+<p><strong>Request:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"spot@public.limit.depth.v3.api.pb@BTCUSDT@5"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><strong>Response:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.limit.depth.v3.api.pb@BTCUSDT@5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publiclimitdepths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"asksList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">asks:</span><span class="w"> </span><span class="err">Sell</span><span class="w"> </span><span class="err">orders</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93180.18"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Price</span><span class="w"> </span><span class="err">level</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">change</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.21976424"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Quantity</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"bidsList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">bids:</span><span class="w"> </span><span class="err">Buy</span><span class="w"> </span><span class="err">orders</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93179.98"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.82651000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"eventtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.limit.depth.v3.api.pb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">type</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36913565463"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Version</span><span class="w"> </span><span class="err">number</span><span class="w"> 
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">pair</span><span class="w">
+  </span><span class="nl">"sendtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1736411838730</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">time</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Request Parameter:</strong> <code>spot@public.limit.depth.v3.api.pb@&lt;symbol&gt;@&lt;level&gt;</code></p>
+<p><strong>Response Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Price level of change</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>string</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>eventtype</td>
+<td>string</td>
+<td>Event type</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>Version number</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>sendtime</td>
+<td>long</td>
+<td>Event time</td>
+</tr>
+</tbody></table>
+<hr/>

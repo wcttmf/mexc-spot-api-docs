@@ -1,0 +1,49 @@
+<h2 id="create-a-sub-account-for-master-account">Create a Sub-account(For Master Account)</h2>
+<p>Create a sub-account from the master account.</p>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"subAccount"</span><span class="p">:</span><span class="s2">"mexc1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li>POST / api/v3/sub-account/virtualSubAccount<br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_ACCOUNT_READ</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p>Parameters:</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subAccount</td>
+<td>STRING</td>
+<td>YES</td>
+<td>Sub-account Name</td>
+</tr>
+<tr>
+<td>note</td>
+<td>STRING</td>
+<td>YES</td>
+<td>Sub-account notes</td>
+</tr>
+<tr>
+<td>recvWindow</td>
+<td>LONG</td>
+<td>NO</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>LONG</td>
+<td>YES</td>
+<td></td>
+</tr>
+</tbody></table>

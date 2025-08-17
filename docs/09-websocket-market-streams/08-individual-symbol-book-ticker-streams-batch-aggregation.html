@@ -1,0 +1,70 @@
+<h2 id="individual-symbol-book-ticker-streams-batch-aggregation">Individual Symbol Book Ticker Streams(Batch Aggregation)</h2>
+<p>This batch aggregation version pushes the best order information for a specified trading pair.</p>
+<blockquote>
+<p><strong>Request:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"spot@public.bookTicker.batch.v3.api.pb@BTCUSDT"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><strong>Response:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.bookTicker.batch.v3.api.pb@BTCUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sendTime"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1739503249114"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publicBookTickerBatch"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"items"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bidPrice"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"96567.37"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidQuantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"3.362925"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askPrice"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"96567.38"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askQuantity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.545255"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Request Parameter:</strong> <code>spot@public.bookTicker.batch.v3.api.pb@&lt;symbol&gt;</code></p>
+<p><strong>Response Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bidprice</td>
+<td>string</td>
+<td>Best bid price</td>
+</tr>
+<tr>
+<td>bidquantity</td>
+<td>string</td>
+<td>Best bid quantity</td>
+</tr>
+<tr>
+<td>askprice</td>
+<td>string</td>
+<td>Best ask price</td>
+</tr>
+<tr>
+<td>askquantity</td>
+<td>string</td>
+<td>Best ask quantity</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>sendtime</td>
+<td>long</td>
+<td>Event time</td>
+</tr>
+</tbody></table>
+<hr/>

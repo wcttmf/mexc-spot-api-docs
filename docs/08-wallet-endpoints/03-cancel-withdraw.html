@@ -1,0 +1,46 @@
+<h2 id="cancel-withdraw">Cancel withdraw</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>delete /api/v3/capital/withdraw?id=ca7bd51895134fb5bd749f1cf875b8af&amp;timestamp={{timestamp}}&amp;signature={{signature}}
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ca7bd51895134fb5bd749f1cf875b8af"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>DELETE</strong> <code>/api/v3/capital/withdraw</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_WITHDRAW_W</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p><strong>Request</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">Yes</td>
+<td style="text-align: left">withdraw id</td>
+</tr>
+</tbody></table>
+<p><strong>Response</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">id</td>
+<td style="text-align: left">withdraw id</td>
+</tr>
+</tbody></table>

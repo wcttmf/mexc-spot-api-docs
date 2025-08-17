@@ -1,0 +1,6 @@
+<h2 id="q6-why-does-websocket-always-disconnect">Q6:Why does WebSocket always disconnect?</h2>
+<ol>
+<li>If there is no valid subscription, it will disconnect in 30 seconds.</li>
+<li>If the subscription is successful, and there is no traffic in 60 seconds, it will automatically disconnect.</li>
+<li>To ensure a stable connection, a Pong reply is required upon receiving the Ping message sent from the server.</li>
+</ol>

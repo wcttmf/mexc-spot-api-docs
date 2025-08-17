@@ -1,0 +1,162 @@
+<h2 id="diff-depth-stream">Diff.Depth Stream</h2>
+<blockquote>
+<p><strong>Request:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"spot@public.aggre.depth.v3.api.pb@100ms@BTCUSDT"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><strong>Response:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.aggre.depth.v3.api.pb@100ms@BTCUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publicincreasedepths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"asksList"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">asks:</span><span class="w"> </span><span class="err">Sell</span><span class="w"> </span><span class="err">orders</span><span class="w">
+    </span><span class="nl">"bidsList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">bids:</span><span class="w"> </span><span class="err">Buy</span><span class="w"> </span><span class="err">orders</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92877.58"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Price</span><span class="w"> </span><span class="err">level</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">change</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Quantity</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"eventtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.aggre.depth.v3.api.pb@100ms"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">type</span><span class="w">
+    </span><span class="nl">"fromVersion"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"10589632359"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">Version</span><span class="w"> </span><span class="err">number</span><span class="w">
+    </span><span class="nl">"toVersion"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"10589632359"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">Version</span><span class="w"> </span><span class="err">number</span><span class="w"> 
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">pair</span><span class="w">
+  </span><span class="nl">"sendtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1736411507002</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">time</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>If the order quantity (<code>quantity</code>) for a price level is 0, it indicates that the order at that price has been canceled or executed, and that price level should be removed.</p>
+<p><strong>Request Parameter:</strong> <code>spot@public.aggre.depth.v3.api.pb@(100ms|10ms)@&lt;symbol&gt;</code></p>
+<p><strong>Response Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Price level of change</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>string</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td>eventtype</td>
+<td>string</td>
+<td>Event type</td>
+</tr>
+<tr>
+<td>fromversion</td>
+<td>string</td>
+<td>From Version number</td>
+</tr>
+<tr>
+<td>toversion</td>
+<td>string</td>
+<td>To Version number</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>sendtime</td>
+<td>long</td>
+<td>Event time</td>
+</tr>
+</tbody></table>
+<hr/>
+ ## Diff.Depth Stream(Batch Aggregation)
+
+> **Request:**
+
+```json
+{
+    "method": "SUBSCRIPTION",
+    "params": [
+        "spot@public.increase.depth.batch.v3.api.pb@BTCUSDT"
+    ]
+}
+```
+
+> **Response:**
+
+```json
+{
+  "channel" : "spot@public.increase.depth.batch.v3.api.pb@BTCUSDT",
+  "symbol" : "BTCUSDT",
+  "sendTime" : "1739502064578",
+  "publicIncreaseDepthsBatch" : {
+    "items" : [ {
+      "asks" : [ ],
+      "bids" : [ {
+        "price" : "96578.48",
+        "quantity" : "0.00000000"
+      } ],
+      "eventType" : "",
+      "version" : "39003145507"
+    }, {
+      "asks" : [ ],
+      "bids" : [ {
+        "price" : "96578.90",
+        "quantity" : "0.00000000"
+      } ],
+      "eventType" : "",
+      "version" : "39003145508"
+    }, {
+      "asks" : [ ],
+      "bids" : [ {
+        "price" : "96579.31",
+        "quantity" : "0.00000000"
+      } ],
+      "eventType" : "",
+      "version" : "39003145509"
+    }, {
+      "asks" : [ ],
+      "bids" : [ {
+        "price" : "96579.84",
+        "quantity" : "0.00000000"
+      } ],
+      "eventType" : "",
+      "version" : "39003145510"
+    }, {
+      "asks" : [ ],
+      "bids" : [ {
+        "price" : "96576.69",
+        "quantity" : "4.88725694"
+      } ],
+      "eventType" : "",
+      "version" : "39003145511"
+    } ],
+    "eventType" : "spot@public.increase.depth.batch.v3.api.pb"
+  }
+}
+```
+
+In the batch aggregation version, if the number of entries exceeds 5 or the time interval exceeds 5ms, the data is pushed once. If the order quantity for a price level is 0, it indicates that the order at that price has been canceled or executed, and that price level should be removed.
+
+**Request Parameter:** `spot@public.increase.depth.batch.v3.api.pb@<symbol>`
+
+**Response Parameters:**
+
+| Parameter | Data Type | Description           |
+| --------- | --------- | --------------------- |
+| price     | string    | Price level of change |
+| quantity  | string    | Quantity              |
+| eventtype | string    | Event type            |
+| version   | string    | Version number        |
+| symbol    | string    | Trading pair          |
+| sendtime  | long      | Event time            |
+
+--- 

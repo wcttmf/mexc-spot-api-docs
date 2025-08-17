@@ -1,0 +1,168 @@
+<h2 id="query-universal-transfer-history-for-master-account">Query Universal Transfer History (For Master Account)</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get /api/v3/capital/sub-account/universalTransfer
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tranId"</span><span class="p">:</span><span class="s2">"11945860693"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccount"</span><span class="p">:</span><span class="s2">"master@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccount"</span><span class="p">:</span><span class="s2">"subaccount1@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientTranId"</span><span class="p">:</span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromAccountType"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toAccountType"</span><span class="p">:</span><span class="s2">"FUTURE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fromSymbol"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"toSymbol"</span><span class="p">:</span><span class="s2">"FUTURE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="mi">1544433325000</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>GET</strong> <code>/api/v3/capital/sub-account/universalTransfer</code><br/></li>
+</ul>
+<p><strong>Permission:</strong> SPOT_TRANSFER_READ</p>
+<p><strong>Weight(IP):</strong> 1</p>
+<p><strong>Parameters:</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Mandatory</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">fromAccount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">Transfer from master account by default if fromAccount is not sent</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">Transfer to master account by default if toAccount is not sent</td>
+</tr>
+<tr>
+<td style="text-align: left">fromAccountType</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">fromAccountType:"SPOT","FUTURES"</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccountType</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">toAccountType:"SPOT","FUTURES"</td>
+</tr>
+<tr>
+<td style="text-align: left">startTime</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">startTime</td>
+</tr>
+<tr>
+<td style="text-align: left">endTime</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">endTime</td>
+</tr>
+<tr>
+<td style="text-align: left">page</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">default 1</td>
+</tr>
+<tr>
+<td style="text-align: left">limit</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">NO</td>
+<td style="text-align: left">default 500, max 500</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+<tr>
+<td style="text-align: left">signature</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">YES</td>
+<td style="text-align: left">sign</td>
+</tr>
+</tbody></table>
+<p><strong>Response:</strong></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">tranId</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">transfer ID</td>
+</tr>
+<tr>
+<td style="text-align: left">fromAccount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">fromAccount</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">toAccount</td>
+</tr>
+<tr>
+<td style="text-align: left">clientTranId</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">clientTranId</td>
+</tr>
+<tr>
+<td style="text-align: left">asset</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">asset</td>
+</tr>
+<tr>
+<td style="text-align: left">amount</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">transfer amount</td>
+</tr>
+<tr>
+<td style="text-align: left">fromAccountType</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">fromAccountType</td>
+</tr>
+<tr>
+<td style="text-align: left">toAccountType</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">toAccountType</td>
+</tr>
+<tr>
+<td style="text-align: left">fromSymbol</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">fromSymbol</td>
+</tr>
+<tr>
+<td style="text-align: left">toSymbol</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">toSymbol</td>
+</tr>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">string</td>
+<td style="text-align: left">status</td>
+</tr>
+<tr>
+<td style="text-align: left">timestamp</td>
+<td style="text-align: left">number</td>
+<td style="text-align: left">timestamp</td>
+</tr>
+</tbody></table>

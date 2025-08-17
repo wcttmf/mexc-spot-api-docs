@@ -1,0 +1,68 @@
+<h2 id="individual-symbol-book-ticker-streams">Individual Symbol Book Ticker Streams</h2>
+<p>Pushes any update to the best bid or ask's price or quantity in real-time for a specified symbol.</p>
+<blockquote>
+<p><strong>Request:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"spot@public.aggre.bookTicker.v3.api.pb@100ms@BTCUSDT"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><strong>Response:</strong></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot@public.aggre.bookTicker.v3.api.pb@100ms@BTCUSDT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publicbookticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"bidprice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93387.28"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Best</span><span class="w"> </span><span class="err">bid</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="nl">"bidquantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.73485"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Best</span><span class="w"> </span><span class="err">bid</span><span class="w"> </span><span class="err">quantity</span><span class="w">
+    </span><span class="nl">"askprice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"93387.29"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Best</span><span class="w"> </span><span class="err">ask</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="nl">"askquantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.669875"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Best</span><span class="w"> </span><span class="err">ask</span><span class="w"> </span><span class="err">quantity</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Trading</span><span class="w"> </span><span class="err">pair</span><span class="w">
+  </span><span class="nl">"sendtime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1736412092433</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Event</span><span class="w"> </span><span class="err">time</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Request Parameter:</strong> <code>spot@public.aggre.bookTicker.v3.api.pb@(100ms|10ms)@&lt;symbol&gt;</code></p>
+<p><strong>Response Parameters:</strong></p>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>bidprice</td>
+<td>string</td>
+<td>Best bid price</td>
+</tr>
+<tr>
+<td>bidquantity</td>
+<td>string</td>
+<td>Best bid quantity</td>
+</tr>
+<tr>
+<td>askprice</td>
+<td>string</td>
+<td>Best ask price</td>
+</tr>
+<tr>
+<td>askquantity</td>
+<td>string</td>
+<td>Best ask quantity</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Trading pair</td>
+</tr>
+<tr>
+<td>sendtime</td>
+<td>long</td>
+<td>Event time</td>
+</tr>
+</tbody></table>
+<hr/>
